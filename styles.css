@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+
+/* =================================================================*/
+
+/*Cabeçalho*/
+
+header {
+    background-color: #E600FF; /* Cor do cabeçalho */
+    color: white;
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0; /* Remove a margem do cabeçalho */
+    height: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona sombra ao cabeçalho */
+}
+
+
+
+
+.logo {
+    display: flex;
+    align-items: center; /* Alinha verticalmente o conteúdo dentro do .logo */
+    margin: 20px;
+}
+
+.logo img {
+    height: 200px;
+    transition: transform 0.3s ease, filter 0.3s ease; /* Suave transição para transformações e efeitos de filtro */
+}
+
+.logo img:hover {
+    transform: scale(1.05); /* Aumenta levemente o tamanho */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Adiciona uma sombra mais profunda */
+    animation: pulse 0.6s infinite; /* Animação de pulso contínua */
+}
+
+/* Keyframes para a animação pulse */
+@keyframes pulse {
+    0% {
+        transform: scale(1.05);
+    }
+    50% {
+        transform: scale(1.1); /* Expande levemente no meio da animação */
+    }
+    100% {
+        transform: scale(1.05);
+    }
+}
+
+
+
+
+
+nav {
+    display: flex;
+    flex-grow: 1; /* Permite que o nav ocupe o espaço disponível */
+    margin-left: 450px; /* Ajusta a posição do nav para a direita */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0; /* Remove margem */
+    display: flex;
+    align-items: center; /* Alinha os itens verticalmente */
+}
+
+nav ul li {
+    margin: 0 20px;
+    position: relative;
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 40px; /* Ajusta o tamanho da fonte */
+    display: block;
+    font-family: Orbitron, sans-serif;
+    transition: color 0.3s, transform 0.3s; /* Adiciona uma transição suave */
+}
+
+
+
+
+nav ul li a:hover {
+    color: #AEE67E; /* Cor do texto ao passar o mouse */
+    transform: scale(1.1); /* Aumenta o tamanho ao passar o mouse */
+}
+
+
+
+
+nav > ul > li:not(:last-child)::after {
+    content: "     ";
+    position: absolute;
+    right: -20px; /* Ajuste a posição da listra */
+    top: 2px;
+    height: 50px;
+    width: 2px; /* Espessura da listra */
+    background-color: rgb(0, 0, 0); /* Cor da listra */
+}
+
+
+
+#separar {
+    width: 100%;
+    height: 90px;
+    background-color: #000000; /* Fundo totalmente preto */
+    position: relative; /* Necessário para o posicionamento absoluto dos filhos */
+    overflow: hidden; /* Garante que o conteúdo não saia do contêiner */
+    transition: background-color 0.3s ease, border-color 0.3s ease; /* Transições suaves */
+}
+
+/* Estilo para o separador ao passar o mouse */
+#separar:hover {
+    background-color: #AEE67E; /* Cor de fundo ao passar o mouse */
+    border-top: 2px solid black; /* Nova cor da borda superior */
+    border-bottom: 2px solid black; /* Nova cor da borda inferior */
+}
+
+/* Linha animada no separador */
+.line {
+    position: absolute;
+    top: 50%;
+    left: -100%;
+    width: 100%;
+    height: 4px; /* Altura da linha */
+    background: linear-gradient(90deg, transparent, #E600FF, transparent);
+    transform: translateY(-50%); /* Centraliza verticalmente a linha */
+    animation: lineAnimation 2s infinite; /* Animação da linha */
+    z-index: 0; /* Garante que a linha fique atrás do texto */
+}
+
+/* Letras no centro do separador */
+.text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 64px; /* Tamanho das letras */
+    color: #E600FF; /* Cor das letras */
+    border-radius: 30px;
+    font-weight: bold;
+    font-family: 'Orbitron', sans-serif; /* Fonte das letras */
+    z-index: 1; /* Garante que as letras estejam acima da linha */
+    background: #2a082e; /* Mantém o fundo transparente para o texto */
+    padding: 0 10px; /* Espaçamento para garantir que a linha não apareça atrás do texto */
+}
+
+
+/* Keyframes para a animação da linha */
+@keyframes lineAnimation {
+    0% {
+        transform: translateY(-50%) translateX(-100%);
+    }
+    50% {
+        transform: translateY(-50%) translateX(100%);
+    }
+    100% {
+        transform: translateY(-50%) translateX(-100%);
+    }
+}
+
+
+
+
+
+#nosotros {
+    background: linear-gradient(180deg, #000000, #E600FF); /* Gradiente do preto para o roxo de baixo para cima */
+    padding: 80px 20px; /* Aumenta o espaçamento interno */
+    text-align: center;
+    color: #ffffff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra mais pronunciada */
+    position: relative; /* Permite posicionar o botão de forma absoluta */
+  }
+  
+  #nosotros h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem; /* Aumenta o tamanho do texto */
+    color: #ffffff;
+    margin-bottom: 20px;
+    line-height: 1.4; /* Altura da linha ajustada */
+    background: -webkit-linear-gradient(45deg, #E600FF, #4caf50); /* Gradiente no texto */
+    -webkit-background-clip: text; /* Faz o gradiente aparecer no texto */
+    -webkit-text-fill-color: transparent; /* Torna o texto transparente para o gradiente */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); /* Sombra no texto */
+    animation: fadeIn 1.5s ease-out, slideIn 1s ease-out; /* Animações de fade-in e slide-in */
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  
+  #nosotros p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.2rem;
+    color: #e0e0e0; /* Cor do texto mais clara para contraste */
+    margin-top: 10px;
+    line-height: 1.6;
+    max-width: 800px; /* Limita a largura do parágrafo */
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0;
+    animation: fadeIn 2s ease-out forwards; /* Animação de fade-in */
+  }
+  
+  #nosotros .cta-button {
+    display: inline-block;
+    background-color: #4caf50; /* Cor do botão */
+    color: #ffffff;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    border-radius: 8px; /* Bordas mais arredondadas */
+    margin-top: 20px;
+    transition: background-color 0.3s, transform 0.3s; /* Transição suave para hover */
+  }
+  
+  #nosotros .cta-button:hover {
+    background-color: #45a049; /* Cor do botão ao passar o mouse */
+    transform: scale(1.05); /* Leve aumento ao passar o mouse */
+  }
+  
